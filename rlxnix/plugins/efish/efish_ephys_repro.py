@@ -29,7 +29,6 @@ class EfishEphys(ReProRun):
             if signal_traces is not None:
                 for t in self.traces:
                     if t in signal_traces:
-
                         self._signal_trace_map[s] = t
 
     def spikes(self, stimulus_index=None, trace_name=None):

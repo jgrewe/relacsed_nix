@@ -10,6 +10,11 @@
             "stimulus": ["GlobalEFieldStimulus"],
             "chirps": ["Chirps", "Chirps-1", "Chirps-2"]
         },
+        "efield": {
+            "eod": ["EOD", "EOD-1"],
+            "eod times": ["EOD events", "EOD_events", "EOD_event-1"],
+            "local eod": ["LocalEOD", "LocalEOD-1", "LocalEOD-2"]
+        },
         "default": {
             "spikes": ["Spikes", "Spikes-1", "Spikes-2"],
             "membrane voltage": ["V", "V-1", "V-2"],
