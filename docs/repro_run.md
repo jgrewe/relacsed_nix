@@ -14,19 +14,19 @@ baseline_0 = dataset.repro_runs('BaselineActivity_1', exact=True)[0]
 
 ## Easy data access with specialized classes
 
-*relacs* controls the experiments with RePros, collections of RePros are called plugin sets. For example there is (among others) the efish plugin set. **rlxnix** classes made for representing *relacs* RePro data are stored in the ``rlxnix.plugins`` module.
+**relacs** controls the experiments with RePros, collections of RePros are called plugin sets. For example there is (among others) the efish plugin set. **rlxnix** classes made for representing *relacs* RePro data are stored in the ``rlxnix.plugins`` module.
 
-For the *relacs* BaselineActivity repro there is an **rlxnix** equivalent class (defined in the ``rlxnix.plugins.efish.baseline`` module). Which offers some convenience methods:
+For the **relacs** BaselineActivity repro there is an **rlxnix** equivalent class (defined in the ``rlxnix.plugins.efish.baseline`` module). Which offers some convenience methods:
 
 ```python
 type(baseline_0)
 rlxnix.plugins.efish.baseline.Baseline
 
 print(baseline_0.baseline_rate)
-59.43223443223443
+59.43223443223443  # the spontaneous activity of the neuron
 
 print(baseline.baseline_cv)
-0.07113413039235926
+0.07113413039235926  # by the coefficient of variation in the interspike interval
 ```
 
 The ``Baseline`` class provides direct access to the spikes, the local eod and the membrane_voltage.
@@ -61,7 +61,7 @@ The ``rlxnix.plugins.efish.baseline.Baseline`` class is derived from ``rlxnix.ba
 At this time, there is no matching class for the **SAM** RePro.
 
 ```python
-sam = dataset.repro_runs("sam")[0]
+sam = dataset.repro_runs("sam")[0]  # the first of the repros with "sam" in their name
 type(sam)
 rlxnix.base.repro.ReProRun
 ```
@@ -126,7 +126,7 @@ sam_spike_times, _ = sam.trace_data("Spikes-1")
 sam_eod, sam_time = sam.trace_data("LocalEOD-1")
 ```
 
-``ReProRun.trace_data`` expects at least one argument, the trace name. It always returns two values. The first is the recorded data and the second is the respective time axis (if the data type is continuous, for *V-1* or *LocalEOD-1*) or ``None`` (if the data type is events, *Spikes-1*). By default the time or the times of the event traces will be given relative to the RePro start. If absolute times are required on can pass ``rlx.TimeReference.Absolute`` to ``trace_data``.
+``ReProRun.trace_data`` expects at least one argument, the trace name. It always returns two values. The first is the recorded data and the second is the respective time axis (if the data type is continuous, for *V-1* or *LocalEOD-1*) or ``None`` if the trace stores event data (e.g. *Spikes-1*). By default, the time or the times of the event traces will be given relative to the RePro start. If absolute times are required on can pass ``rlx.TimeReference.Absolute`` to ``trace_data`` as a second argument.
 
 Let's plot the data...
 

@@ -1,6 +1,6 @@
 # Installation
 
-The **rlxnix** package is in an early state, some things may not work as expected.
+The **rlxnix** package is in an early development state, some things may not work as expected or change quickly.
 
 To try it out and install it there are two options:
 
@@ -24,3 +24,5 @@ To try it out and install it there are two options:
 ```shell
     pip install -i https://test.pypi.org/simple/ rlxnix
 ```
+
+*you may need to call **pip3** to install it, depending on your installation**

@@ -15,7 +15,6 @@ markdown_extensions:
 nav:
     - Home: 'index.md'
     - Installation: 'installation.md'
-    - About: 'contact.md'
     - User Guide:
       - Introduction: 'introduction.md'
       - File exploration:
@@ -27,3 +26,4 @@ nav:
       - Writing ReProRun subclasses: 'subclassing.md'
       - Configurations: config.md
     - API reference: api/index.html
+    - About: 'contact.md'

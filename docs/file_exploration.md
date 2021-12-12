@@ -1,9 +1,8 @@
-
-## The ``rlxnix.Dataset`` class
+# The ``rlxnix.Dataset`` class
 
 The *Dataset* class is the linchpin of the exploratory functionality offered by **rlxnix**. Upon creation of a Dataset instance, it will crawl through the file and index it, **this may take a little while**.
 
-To get an initial overview, one can plot the timeline which shows which *RePro* was run when and illustrated the stimulus segments within the RePro runs.
+To get an initial overview, one can plot the timeline which shows which *RePro* was run and for how long. The darker blocks inside illustrate the stimulus segments within the RePro runs.
 
 ```python
 import rlxnix as rlx
@@ -15,9 +14,9 @@ dataset.plot_timeline()
 
 ![Timeline](./images/timeline.png)
 
-The mouse-over shows the name of the RePro and the time interval in which is was active. The darker rectangles show that two stimuli were presented while "SAM_2" was active.
+The mouse-over shows the name of the RePro and the time interval in which it was active. The darker rectangles show that two stimuli were presented while "SAM_2" was active.
 
-Programmatically one can see the list of run RePros by ``dataset.repros``:
+Programmatically one can see the list of ReProRuns by ``dataset.repros``:
 
 ```python
 dataset.repros
@@ -58,4 +57,4 @@ print(dataset.metadata)
    'Input': {'gain': ([50.0], ''), 'offset': ([6.0], 'uA/cm^2')}}}}
 ```
 
-The metadata are stored in a dictionary and the values associated with a key are (unless again a dictionary) tuples containing the list of value(s) and the respective unit (which may be empty).
+The metadata are returned as a dictionary and the values associated with a key are (unless again a dictionary) tuples containing the list of value(s) and the respective unit (which may be empty).

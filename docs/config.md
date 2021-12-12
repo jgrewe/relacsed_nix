@@ -44,4 +44,4 @@ Valid settings for the ``log_level`` are ``CRITICAL``, ``ERROR``, ``WARNING``, `
 
 ## Trace configurations
 
-The ``trace_configs`` section of the settings file contains the mapping of signal names ("such as spikes", or "membrane voltage") to lists of trace names that are used in the recoding. The mappings are given for each plugin separately. For the moment this is only the ``efish`` plugin.
+The ``trace_configs`` section of the configuration file contains the mapping of signal names (such as "spikes", or "membrane voltage") to lists of trace names that are commonly used in the recording. The mappings are given for each plugin separately. For the moment this is only the ``efish`` plugin.

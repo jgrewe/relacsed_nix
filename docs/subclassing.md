@@ -11,4 +11,5 @@ The submodule ``rlxnix.plugins.efish`` currently contains modules specifically a
 When subclassing ``rlxnix.base.repro.ReRroRun`` there are a few things to take care of:
 
 1. Make sure, that the respective ``__init__.py`` (e.g. the one in the ``rlxnix.plugins.efish`` module) imports your class. Otherwise rlxnix will not find it and the default ``ReProRun`` class will be used.
-2. *Do not overwrite* the ``ReProRun.start_time``, ``ReProRun.stop_time``, and ``ReProRun.duration`` in your class. These properties are essential to find the stimuli that belong to the repro run.
+2. If you create a new ``rlxnix.plugins`` submodule make sure to import it in the ``rlxnix.plugins.__init__.py`` file.
+3. **Do not overwrite** the ``ReProRun.start_time``, ``ReProRun.stop_time``, and ``ReProRun.duration`` in your class. These properties are essential to find the stimuli that belong to the repro run.
